@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Clients List</title>
+</head>
+<body>
+<div>
+    <table border="2">
+        <tr>
+            <td>NAME</td>
+            <td>LAST NAME</td>
+            <td>PHONE</td>
+            <td>CAR</td>
+        </tr>
+        <th:block th:each="client : ${Client}">
+            <tr>
+                <td th:text="${client.getName()}"></td>
+                <td th:text="${client.getLastName()}"></td>
+                <td th:text="${client.getPhone()}"></td>
+                <td th:each="car : ${client.cars}">
+                    <span th:text="${car.carID}"></span>
+                    <span th:text="${car.color}"></span>
+                    <span th:text="${car.mark}"></span>
+                    <span th:text="${car.type}"></span>
+                    <span th:text="${car.year}"></span>
+                </td>
+            </tr>
+        </th:block>
+    </table>
+</div>
+</body>
+</html>

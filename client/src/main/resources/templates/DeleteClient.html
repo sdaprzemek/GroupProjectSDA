@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Client</title>
+</head>
+<body>
+<div>
+    <form action="#" th:action="@{/deleted}" th:object="${Client}" class="usrform" method="post">
+        <p>ID: <input type="number" th:filed="*{clientID}"></p>
+        <p>Name: <input type="text" th:field="*{name}"></p>
+        <p>Last name: <input type="text" th:field="*{lastName}"></p>
+        <input type="submit" value="Delete">
+    </form>
+</div>
+</body>
+</html>

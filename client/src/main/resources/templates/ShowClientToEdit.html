@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Client to Edit</title>
+</head>
+<body>
+<div id="table" class="table-editable">
+    <table class="table" border="2">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>LAST NAME</th>
+            <th>PHONE</th>
+            <th>CAR MARK</th>
+            <th>CAR TYPE</th>
+            <th>CAR YEAR</th>
+            <th>CAR COLOR</th>
+        </tr>
+        <th:block th:each="client:${Client}">
+            <tr>
+                <td th:text="${client.getClientID()}"></td>
+                <td contenteditable="true" th:text="${client.getName()}"></td>
+                <td contenteditable="true" th:text="${client.getLastName()}"></td>
+                <td contenteditable="true" th:text="${client.getPhone()}"></td>
+                <th:block th:each="car:${client.cars}">
+                    <td contenteditable="true" th:text="${car.getMark()}">
+                    <td contenteditable="true" th:text="${car.getType()}"></td>
+                    <td contenteditable="true" th:text="${car.getYear()}"></td>
+                    <td contenteditable="true" th:text="${car.getColor()}"></td>
+                </th:block>
+            </tr>
+        </th:block>
+    </table>
+</div>
+<button id="export-btn" class="btn btn-primary">Save</button>
+<p id="export"></p>
+</body>
+</html>

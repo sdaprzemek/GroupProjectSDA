@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloWorld</title>
+</head>
+<body>
+<div>
+    <h1>CarList</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>COLOR</th>
+            <th>TYPE</th>
+            <th>MARK</th>
+            <th>YEAR</th>
+            <th>VIN</th>
+        </tr>
+        <tr th:each="car : ${carList}">
+            <td th:text="'Id: ' + ${car.carID}"></td>
+            <td th:text="'Color: ' + ${car.color}"></td>
+            <td th:text="'Type: ' + ${car.type}"></td>
+            <td th:text="'Mark: ' + ${car.mark}"></td>
+            <td th:text="'Year: ' + ${car.year}"></td>
+            <td th:text="'VIN: ' + ${car.VIN}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

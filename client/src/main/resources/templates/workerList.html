@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloWorld</title>
+</head>
+<body>
+<div>
+    <h1>WorkerList</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>LAST NAME</th>
+            <th>POSITION</th>
+        </tr>
+        <tr th:each="worker : ${workerList}">
+            <td th:text="'Id: ' + ${worker.workerID}"></td>
+            <td th:text="'Name: ' + ${worker.name}"></td>
+            <td th:text="'LastName: ' + ${worker.lastName}"></td>
+            <td th:text="'Position: ' + ${worker.position}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

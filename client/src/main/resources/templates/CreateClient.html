@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Client</title>
+</head>
+<body>
+<div>
+    <form action="#" th:action="@{/created}" th:object="${Client}" class="usrform" method="post">
+        <p>Name: <input type="text" th:field="*{name}"></p>
+        <p>Last name: <input type="text" th:field="*{lastName}"></p>
+        <p>Phone: <input type="text" th:field="*{phone}"></p>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
